@@ -11,13 +11,10 @@ const historyRoute = require("./routes/history/history.route");
 const app = express();
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use("/doctors", doctorsRoute);
 app.use("/appointments", appointmentRoute);
 app.use("/shifts", doctorsShift);
 app.use("/history", historyRoute);
-
-
 
 module.exports = app;

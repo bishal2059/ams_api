@@ -10,7 +10,7 @@ const dummyData = {
   email: "ram2015@gmail.com",
   phoneNo: "9845243698",
   doctorName: "Thomas Frank (Cardiologist)",
-  //Date is send from front end in the UNIAC Timestamp or UTC String
+  //Date is send from postman in the UNIAC Timestamp or UTC String
   date: new Date("Sat, 07 Jan 2023 18:15:00 GMT").toUTCString(),
   shift: "Morning Shift (7:00AM - 9:00AM)",
 };
@@ -20,7 +20,6 @@ const getAllCurrentAppointment = function () {
 };
 
 const addNewAppointment = function (data) {
-  console.log(data);
   const docArray = data.doctorName.split(" ");
   const doctorSymbol = docArray[0][0] + docArray[1][0];
   Object.assign(data, {

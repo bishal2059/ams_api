@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const validator = require("email-validator");
+const validator = require("validator");
 
 const doctorsName = JSON.parse(
   fs.readFileSync(
@@ -32,7 +32,7 @@ const verifyUserData = function (userData) {
     if (!onlyLetters(userData.firstName))
       reject({ error: "Invalid First Name" });
     if (!onlyLetters(userData.lastName)) reject({ error: "Invalid Last Name" });
-    if (!validator.validate(userData.email)) {
+    if (!validator.isEmail(userData.email)) {
       reject({ error: "Invalid Email" });
     }
     if (userData.phoneNo.length !== 10 || !userData.phoneNo.startsWith("98")) {
