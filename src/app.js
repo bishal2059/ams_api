@@ -17,10 +17,7 @@ app.use("/doctors", doctorsRoute);
 app.use("/appointments", appointmentRoute);
 app.use("/shifts", doctorsShift);
 app.use("/history", historyRoute);
-//Uncomment while using Front End with the API: npm run build
 
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
-// });
+
 
 module.exports = app;
